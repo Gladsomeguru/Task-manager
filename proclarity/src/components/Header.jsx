@@ -22,10 +22,10 @@ const Header = ({isOpen,setIsOpen}) => {
                 <button className="md:hidden" onClick={()=>setIsOpen(!isOpen)}><FaBars className="text-xl"/></button>
                 <h1 className="text-xl font-semibold mb-0">Dashboard</h1>
                 <div className="flex gap-4 items-center">
-                    <input type="text" placeholder="Search" className="hidden md:inline border border-emerald-400 rounded-full px-4 py-1 w-64 focus:outline-none focus:ring-0" />
-                    <button onClick={() => setDarkMode(!darkMode)} className="p-2 rounded-full bg-emerald-500 text-white hover:bg-emerald-600 transition-colors cursor-pointer">{darkMode ? <FaSun /> : <FaMoon />}</button>
+                    <input type="text" placeholder="Search" id="searchbar" className="hidden md:inline border border-emerald-400 rounded-full px-4 py-1 w-64 focus:outline-none focus:ring-0" />
+                    <button onClick={() => setDarkMode(!darkMode)} className="text-xl rounded-full text-emerald-500 hover:bg-emerald-600 transition-colors cursor-pointer dark:text-emerald-300">{darkMode ? <FaSun /> : <FaMoon />}</button>
                     <h4 className="mb-0 font-medium hidden md:block">Gladdy</h4>
-                    <img src="/images/user.jpg" alt="user" className="header-user rounded-full w-8 h-8 mt-1" />
+                    <img src="./images/user.jpg" alt="user" className="header-user rounded-full w-8 h-8 mt-1" />
                 </div>
             </header>
         </>

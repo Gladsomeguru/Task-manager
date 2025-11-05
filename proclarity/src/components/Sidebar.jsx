@@ -20,7 +20,7 @@ const Sidebar = ({isOpen,setIsOpen}) => {
         md:rounded-lg shadow-lg md:m-2 m-0 dark:bg-emerald-700 md:static fixed top-0 left-0 transition-transform duration-300'
         ${isOpen? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 `}>
             <div className='flex flex-row gap-2 items-center border-b border-emerald-400 p-4'>
-                <img src="/images/logo.png" alt="logo" className='side-logo' />
+                <img src="./images/logo.png" alt="logo" className='side-logo'/>
                 <h3 className='text-xl font-normal'><span className='font-bold'>Pro</span>Clarity</h3>
                 <button className='md:hidden ms-auto' onClick={()=>setIsOpen(!isOpen)}><FaTimes/></button>
             </div>
