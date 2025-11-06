@@ -18,7 +18,7 @@ const Sidebar = ({isOpen,setIsOpen}) => {
     return (
         <div className={`sidebar bg-gray-700 col-span-2 lg:w-auto w-full lg:h-auto h-full text-slate-100 flex flex-col 
         lg:rounded-lg shadow-lg lg:m-2 m-0 dark:bg-gray-700 lg:static fixed top-0 left-0 transition-transform duration-300'
-        ${isOpen? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0 `}>
+        ${isOpen? 'translate-x-0' : '-translate-x-full z-50'} lg:translate-x-0 `}>
             <div className='flex flex-row gap-2 items-center p-4'>
                 <img src="./images/logo.png" alt="logo" className='side-logo'/>
                 <h3 className='text-xl font-normal'><span className='font-bold'>Pro</span>Clarity</h3>

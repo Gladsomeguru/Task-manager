@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import { FaTimes } from "react-icons/fa";
-import { LiaTimesSolid  } from "react-icons/lia";
+import { LiaTimesSolid } from "react-icons/lia";
 
 const TaskManager = ({ tasks, setTasks, setOpenModal }) => {
     const [taskInput, setTaskInput] = useState({
         title: "",
         description: "",
         priority: "Low",
-        dueDate: ""
+        dueDate: "",
+        status: "Pending"
     });
 
     useEffect(() => {
@@ -23,6 +24,14 @@ const TaskManager = ({ tasks, setTasks, setOpenModal }) => {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
+        if (name === "dueDate") {
+            const selectedDate = new Date(value);
+            const formattedDate = selectedDate
+                .toLocaleDateString('en-US', {  day: '2-digit', month: 'short'})
+                .replace(',', '');
+            setTaskInput({ ...taskInput, [name]: formattedDate });
+            return;
+        }
         setTaskInput({ ...taskInput, [name]: value });
     }
 
@@ -38,7 +47,8 @@ const TaskManager = ({ tasks, setTasks, setOpenModal }) => {
             title: "",
             description: "",
             priority: "Low",
-            dueDate: ""
+            dueDate: "",
+            status: ""
         });
         setOpenModal(false);
 
@@ -67,6 +77,14 @@ const TaskManager = ({ tasks, setTasks, setOpenModal }) => {
                         <option>Low</option>
                         <option>Medium</option>
                         <option>High</option>
+                    </select>
+                </div>
+                <div className="flex flex-col gap-2">
+                    <label htmlFor="Status">Status</label>
+                    <select name="status" id="status" value={taskInput.status} onChange={handleChange} className="border border-slate-500 rounded-lg p-2  bg-emerald-100 text-slate-700 dark:bg-slate-900 dark:text-emerald-100 focus:outline-none focus:ring-1 focus:ring-emerald-500">
+                        <option>Pending</option>
+                        <option>In Progrerss</option>
+                        <option>Completed</option>
                     </select>
                 </div>
                 <div className="flex flex-col gap-2">
