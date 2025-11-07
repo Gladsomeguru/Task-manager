@@ -37,7 +37,7 @@ const Tasks = ({ tasks, setTasks, editingTask, setEditingTask, setOpenModal, ope
 
     return (
         <>
-            <div className="flex items-center px-4 pb-4 lg:gap-2 gap-4 flex-wrap">
+            <div className="flex items-center px-4 lg:gap-2 gap-4 flex-wrap">
                 {!openModal && tasks.length !== 0 && !editingTask &&
                     < button onClick={() => setOpenModal(true)} className="bg-emerald-500 text-slate-100 p-4 py-1 rounded-lg shadow hover:bg-emerald-600 
                         transition-colors duration-200 cursor-pointer 
@@ -69,10 +69,10 @@ const Tasks = ({ tasks, setTasks, editingTask, setEditingTask, setOpenModal, ope
                 </div>
 
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 lg:max-h-[calc(100%-50px)] max-h-[calc(100%-100px)] px-4 overflow-y-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 lg:max-h-[calc(100%-50px)] max-h-[calc(100%-100px)] p-4 overflow-y-auto">
                 {tasks.map((task) => (
-                    <div key={task.id} className={`rounded-lg w-full max-w-md bg-white dark:bg-slate-900 shadow-md border-0 border-r-6 w-full md:1/5
-                ${task.status === "Completed" ? "border-green-500 dark:border-green-300" : task.status === "In Progress" ? "border-yellow-300 dark:border-yellow-300" : "border-red-500 dark:border-red-300"}`}>
+                    <div key={task.id} className={`rounded-lg w-full max-w-md bg-white dark:bg-slate-900 shadow-md border-0 border-r-6 w-full md:1/5 hover:scale-[1.04] hover:shadow-lg transition-all ease-in-out duration-300
+                ${task.status === "Completed" ? "border-green-500 dark:border-green-800" : task.status === "In Progress" ? "border-yellow-300 dark:border-yellow-300" : "border-red-500 dark:border-red-800"}`}>
                         <div className="flex flex-col gap-2 rounded-lg p-4 h-full">
                             <div className=" flex flex-row gap-2 items-center">
                                 <h2 className="text-lg font-semibold mb-0 text-gray-700 dark:text-gray-300 rounded-lg">{task.title}</h2>
@@ -113,9 +113,9 @@ const Tasks = ({ tasks, setTasks, editingTask, setEditingTask, setOpenModal, ope
                                         : 'No due date'}</p>
                                 </div>
                                 <div className={`flex flex-row flex-wrap gap-1 items-center p-2 py-1 rounded-lg text-black cursor-default
-                                    ${task.status === "Completed" ? "bg-green-500 dark:bg-green-300 text-white dark:text-black" : task.status === "In Progress" ? 
+                                    ${task.status === "Completed" ? "bg-green-500 dark:bg-green-700 text-white dark:text-gray-100" : task.status === "In Progress" ? 
                                     "bg-yellow-300 dark:bg-yellow-300" : 
-                                    "text-white bg-red-500 dark:bg-red-300 dark:text-black"}`} title={`Status: ${task.status}`}>
+                                    "text-white bg-red-500 dark:bg-red-800 dark:text-black dark:text-white"}`} title={`Status: ${task.status}`}>
                                     <p className="text-xs font-medium text-nowrap">{task.status}</p>
                                 </div>
                             </div>
