@@ -137,7 +137,7 @@ const Tasks = ({ tasks, setTasks, editingTask, setEditingTask, setOpenModal, ope
 
     return (
         <>
-            <div className="flex items-center px-4 lg:gap-2 gap-4 flex-wrap lg:mb-0 mb-4">
+            <div className="flex items-center px-4 lg:gap-2 gap-4 flex-wrap lg:mb-0 pb-4">
                 {!openModal && tasks.length !== 0 && !editingTask && (
                     <div className="hidden lg:block">{addTaskButton}</div>
                 )}
@@ -181,8 +181,8 @@ const Tasks = ({ tasks, setTasks, editingTask, setEditingTask, setOpenModal, ope
                     </div>
                 </div>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:max-h-[calc(100%-34px)] max-h-[calc(100%-98px)] 
-            p-4 lg:py-4 py-0 overflow-y-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:max-h-[calc(100vh-170px)]  max-h-[calc(100vh-218px)]
+            p-4 lg:px-4 lg:pb-2 py-0 overflow-y-auto">
                 {allTasks.map((task) => (
                     <div key={task.id} className={`rounded-lg w-full max-w-md bg-white dark:bg-slate-900 shadow-md border-0 border-r-6 w-full lg:1/5
                 ${task.status === "Completed" ? "border-green-500 dark:border-green-800" : task.status === "In Progress" ? "border-yellow-300" : "border-red-500 dark:border-red-800"}`}>

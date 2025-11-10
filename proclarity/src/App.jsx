@@ -11,7 +11,7 @@ const Layout = () => {
   return (
     <div className="App grid grid-cols-12 h-screen bg-emerald-100 dark:bg-slate-900 dark:text-emerald-100">
       <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
-      <div className="lg:col-span-10 col-span-12">
+      <div className={`lg:col-span-10 col-span-12 transition-all duration-300 ${isOpen ? 'hidden' : 'visible'}`}>
         <Outlet context={{ isOpen, setIsOpen }} />
       </div>
     </div>
