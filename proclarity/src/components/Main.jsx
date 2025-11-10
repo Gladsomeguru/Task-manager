@@ -1,8 +1,8 @@
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "../App.css"
 import TaskManager from "./TaskManager";
 import Tasks from "./Tasks";
-import { AiOutlinePlus } from "react-icons/ai";
+
 
 const Main = () => {
     const [openModal, setOpenModal] = useState(false);

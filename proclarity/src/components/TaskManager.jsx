@@ -101,7 +101,7 @@ const TaskManager = ({ tasks, setTasks, setOpenModal, editingTask, setEditingTas
                 </div>
                 <div className="flex flex-col gap-2">
                     <label htmlFor="due-date">Due Date <span className="text-red-800">*</span></label>
-                    <input name="dueDate" id="due-date" type="date" required value={taskInput.dueDate} onChange={handleChange} className="border border-slate-500 rounded-lg p-2 text-slate-700 bg-gray-50  dark:text-emerald-100 dark:bg-slate-800 focus:outline-none focus:ring-1 focus:ring-emerald-500 dark:[color-scheme:dark]" />
+                    <input name="dueDate" id="due-date" type="date" value={taskInput.dueDate} onChange={handleChange} required className="border border-slate-500 rounded-lg p-2 text-slate-700 bg-gray-50 dark:text-emerald-100 dark:bg-slate-800 [color-scheme:light] dark:[color-scheme:dark] focus:outline-none focus:ring-1 focus:ring-emerald-500" />
                 </div>
                 <button type="submit" onClick={createTask} className="mt-1 bg-emerald-500 text-slate-100 px-4 py-2 
                 rounded-lg shadow hover:bg-emerald-600 transition-colors duration-200 
