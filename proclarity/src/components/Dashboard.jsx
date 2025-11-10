@@ -6,6 +6,7 @@ import "../App.css";
 import { GiCoffeeCup, GiTrophyCup } from "react-icons/gi";
 
 
+
 const Dashboard = () => {
     const { isOpen, setIsOpen } = useOutletContext();
     const [tasks, setTasks] = useState([]);
@@ -44,7 +45,8 @@ const Dashboard = () => {
                 <div className='grid lg:grid-cols-4 grid-cols-2 gap-4 lg:grid-rows-[auto_1fr] h-[calc(100vh-120px)]'>
                     <div className='bg-white dark:bg-slate-900 p-4 rounded-lg shadow-md border-r-6 border-gray-500 dark:border-gray-300'>
                         <h2 className='text-lg text-gray-700 dark:text-slate-300 font-semibold'>Total Tasks</h2>
-                        <div className='text-4xl text-end font-medium text-gray-800 dark:text-slate-100'>{tasks.length}</div>
+                        <div className='text-4xl text-end font-medium text-gray-800 dark:text-slate-100'>
+                            {tasks.length}</div>
                     </div>
                     <div className='bg-white dark:bg-slate-900 p-4 rounded-lg shadow-md border-r-6 border-red-500 dark:border-red-800'>
                         <h2 className='text-lg text-gray-700 dark:text-slate-300 font-semibold'>Pending</h2>
@@ -62,7 +64,7 @@ const Dashboard = () => {
                     overflow-y-hidden min-h-fit flex flex-col'>
                         <div className='flex items-center justify-between mb-4 gap-2'>
                             <h2 className='text-lg text-gray-700 dark:text-slate-300 font-semibold mb-0'>Upcoming tasks</h2>
-                            <p className='me-auto mb-0 bg-gray-200 dark:bg-slate-700 px-2 rounded-lg text-gray-700 dark:text-slate-300 
+                            <p className='text-lg me-auto mb-0 bg-gray-200 dark:bg-slate-700 px-2 rounded-lg text-gray-700 dark:text-slate-300 
                              font-medium'>{dueSoon.length}</p>
                             {/* <p className='text-sm text-slate-400'>Tasks due within next 7 days</p> */}
                         </div>
@@ -79,7 +81,7 @@ const Dashboard = () => {
                             </ul>
                         ) : <div className='flex flex-col grow items-center justify-center'>
                             {/* <p className='text-gray-500 dark:text-slate-300'>No upcoming deadline 🎉</p> */}
-                            <GiCoffeeCup className='text-9xl self-center items-self-center'/>
+                            <GiCoffeeCup className='text-9xl self-center items-self-center text-gray-300 dark:text-gray-600'/>
                             <p className='text-center text-gray-500'>All caught up! Time to enjoy that coffee break.</p>
                             </div>}
                     </div>
@@ -88,8 +90,8 @@ const Dashboard = () => {
                     dark:border-red-800 overflow-y-hidden min-h-full flex flex-col'>
                         <div className='flex items-center justify-between mb-4 gap-2'>
                             <h2 className='text-lg text-gray-700 dark:text-slate-300 font-semibold mb-0'>Overdue tasks</h2>
-                            <p className='me-auto mb-0 bg-red-500 text-white
-                            dark:bg-red-700 px-2 rounded-lg dark:text-slate-800 font-medium'>{overdue.length}</p>
+                            <p className='text-lg me-auto mb-0 bg-red-500 text-gray-100 dark:text-gray-200
+                            dark:bg-red-700 px-2 rounded-lg font-medium'>{overdue.length}</p>
                         </div>
                         {overdue.length != 0 ? (
                             <ul className="space-y-2 h-[calc(100%-40px)] overflow-y-auto pe-2 ">
@@ -104,7 +106,7 @@ const Dashboard = () => {
                             </ul>
                         ) : <div className='flex flex-col grow items-center justify-center'>
                             {/* <p className='text-gray-500 dark:text-slate-300'>No upcoming deadline 🎉</p> */}
-                            <GiTrophyCup className='text-9xl self-center items-self-center'/>
+                            <GiTrophyCup className='text-9xl self-center items-self-center text-gray-300 dark:text-gray-600'/>
                             <p className='text-center text-gray-500'>All tasks on time — you're winning the productivity game!</p>
                             </div>}
                     </div>
