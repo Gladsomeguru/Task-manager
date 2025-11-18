@@ -16,7 +16,7 @@ const Main = () => {
     }, [tasks]);
 
     return (
-        <div className="main col-span-10 py-4 rounded-lg shadow-lg m-2 lg:ms-0 bg-emerald-50 h-[calc(100vh-88px)] dark:bg-slate-800 dark:text-emerald-100 overflow-y-auto">
+        <div className={`main col-span-10 py-4 rounded-lg shadow-lg m-2 lg:ms-0 bg-emerald-50 h-[calc(100vh-88px)] dark:bg-slate-800 dark:text-emerald-100 overflow-y-auto + ${!openModal && !tasks.length?"!openModal && !tasks.length &&":""}`}>
             {!openModal && !tasks.length && <div className="flex flex-col items-center justify-self-center justify-center text-center">
                 <img src="./images/logo.png" alt="welcome" className="w-24 h-24 mb-4" />
                 <h1 className="text-2xl text-slate-700 font-semibold mb-2 dark:text-emerald-100">Welcome to <span className="font-bold text-slate-600 dark:text-slate-100">Pro</span><span className="font-normal text-slate-600 dark:text-slate-100">Clarity</span></h1>

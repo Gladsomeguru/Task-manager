@@ -36,7 +36,6 @@ const Dashboard = () => {
     );
 
 
-
     return (
         <div className="viewport lg:col-span-10 col-span-12 flex flex-col h-full overflow-hidden">
             <Header setIsOpen={setIsOpen} isOpen={isOpen} currentPage="Dashboard" />
